@@ -2,6 +2,7 @@ import Hero from "@/components/portfolio/Hero";
 import Skills from "@/components/portfolio/Skills";
 import Projects from "@/components/portfolio/Projects";
 import Timeline from "@/components/portfolio/Timeline";
+import Thesis from "@/components/portfolio/Thesis";
 import Contact from "@/components/portfolio/Contact";
 import { useEffect } from "react";
 
@@ -42,6 +43,7 @@ const Index = () => {
       <Skills />
       <Projects />
       <Timeline />
+      <Thesis />
       <Contact />
     </main>
   );
