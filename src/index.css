@@ -48,12 +48,12 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Brand & Effects */
-    --brand: 199 89% 48%; /* cyan */
-    --brand-2: 262 83% 58%; /* violet */
-    --primary-glow: 199 89% 60%;
-    --gradient-primary: radial-gradient(1200px 600px at 10% 0%, hsl(var(--brand)/0.15) 0%, transparent 50%),
-      radial-gradient(1200px 600px at 90% 0%, hsl(var(--brand-2)/0.15) 0%, transparent 50%);
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--brand)/0.35);
+    --brand: 217 91% 56%; /* premium blue */
+    --brand-2: 245 83% 62%; /* royal indigo */
+    --primary-glow: 217 91% 64%;
+    --gradient-primary: radial-gradient(1200px 600px at 10% 0%, hsl(var(--brand)/0.22) 0%, transparent 50%),
+      radial-gradient(1200px 600px at 90% 0%, hsl(var(--brand-2)/0.18) 0%, transparent 50%);
+    --shadow-elegant: 0 12px 40px -12px hsl(var(--brand)/0.35);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -95,12 +95,12 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Brand & Effects (dark) */
-    --brand: 199 89% 48%;
-    --brand-2: 262 83% 58%;
-    --primary-glow: 199 89% 60%;
-    --gradient-primary: radial-gradient(1200px 600px at 10% 0%, hsl(var(--brand)/0.2) 0%, transparent 50%),
-      radial-gradient(1200px 600px at 90% 0%, hsl(var(--brand-2)/0.2) 0%, transparent 50%);
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--brand)/0.35);
+    --brand: 217 91% 56%;
+    --brand-2: 245 83% 62%;
+    --primary-glow: 217 91% 64%;
+    --gradient-primary: radial-gradient(1200px 600px at 10% 0%, hsl(var(--brand)/0.28) 0%, transparent 50%),
+      radial-gradient(1200px 600px at 90% 0%, hsl(var(--brand-2)/0.24) 0%, transparent 50%);
+    --shadow-elegant: 0 12px 40px -12px hsl(var(--brand)/0.35);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 const Hero = () => {
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("johnwelsh5158@gmail.com");
+    navigator.clipboard.writeText("Johnwelsh5158@gmail.com");
     toast("Email copied to clipboard");
   };
 

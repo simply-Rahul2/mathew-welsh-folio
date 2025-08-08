@@ -11,13 +11,13 @@ const Contact = () => {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Button variant="hero" asChild>
-            <a href="mailto:johnwelsh5158@gmail.com" className="inline-flex items-center gap-2">
+            <a href="mailto:Johnwelsh5158@gmail.com" className="inline-flex items-center gap-2">
               <Mail /> Email
             </a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="tel:+919398278175" className="inline-flex items-center gap-2">
-              <Phone /> +91 9398278175
+            <a href="tel:+46793298629" className="inline-flex items-center gap-2">
+              <Phone /> +46 79-329 86 29
             </a>
           </Button>
           <Button variant="ghost" asChild>
