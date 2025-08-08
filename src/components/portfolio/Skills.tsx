@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const sections: { title: string; items: string[] }[] = [
   {
@@ -31,18 +32,24 @@ const Skills = () => {
   return (
     <section id="skills" className="container py-16 md:py-24">
       <h2 className="font-display text-3xl md:text-4xl mb-8">Technical Skills</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <Tabs defaultValue={sections[0].title} className="w-full">
+        <TabsList className="w-full overflow-x-auto flex justify-start">
+          {sections.map((s) => (
+            <TabsTrigger key={s.title} value={s.title} className="whitespace-nowrap">{s.title}</TabsTrigger>
+          ))}
+        </TabsList>
         {sections.map((s) => (
-          <div key={s.title} className="glass rounded-xl p-6 hover-scale">
-            <h3 className="text-lg font-semibold mb-4">{s.title}</h3>
-            <div className="flex flex-wrap gap-2">
-              {s.items.map((i) => (
-                <Badge key={i} variant="secondary">{i}</Badge>
-              ))}
+          <TabsContent key={s.title} value={s.title}>
+            <div className="glass rounded-xl p-6 mt-4">
+              <div className="flex flex-wrap gap-2">
+                {s.items.map((i) => (
+                  <Badge key={i} variant="secondary">{i}</Badge>
+                ))}
+              </div>
             </div>
-          </div>
+          </TabsContent>
         ))}
-      </div>
+      </Tabs>
     </section>
   );
 };

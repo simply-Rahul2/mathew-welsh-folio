@@ -41,21 +41,21 @@ const Projects = () => {
   return (
     <section id="projects" className="container py-16 md:py-24">
       <h2 className="font-display text-3xl md:text-4xl mb-8">Project Portfolio</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
         {projects.map((p) => (
-          <Card key={p.id} className="overflow-hidden group hover-scale relative" onMouseMove={(e) => { const el = e.currentTarget as HTMLElement; const r = el.getBoundingClientRect(); const x = e.clientX - r.left; const y = e.clientY - r.top; el.style.setProperty('--x', `${x}px`); el.style.setProperty('--y', `${y}px`); }}>
+          <Card key={p.id} className="overflow-hidden group hover-scale relative min-h-[260px] lg:min-h-[300px] transform transition-transform duration-300" onMouseMove={(e) => { const el = e.currentTarget as HTMLElement; const r = el.getBoundingClientRect(); const x = e.clientX - r.left; const y = e.clientY - r.top; el.style.setProperty('--x', `${x}px`); el.style.setProperty('--y', `${y}px`); }}>
             <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden>
               <div className="absolute inset-0" style={{
-                background: 'radial-gradient(400px 200px at var(--x, 50%) var(--y, 50%), hsl(var(--ring)/0.25), transparent 60%)'
+                background: 'radial-gradient(600px 300px at var(--x, 50%) var(--y, 50%), hsl(var(--ring)/0.28), transparent 60%)'
               }} />
             </div>
-            <CardHeader>
-              <CardTitle className="flex items-center justify-between">
+            <CardHeader className="p-8 pb-4">
+              <CardTitle className="flex items-center justify-between text-xl md:text-2xl">
                 <span>{p.title}</span>
                 <span className="text-xs text-muted-foreground">{p.meta}</span>
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-8 pt-0">
               <p className="text-sm text-muted-foreground mb-3">{p.role}</p>
               <ul className="list-disc list-inside space-y-1 text-sm mb-4">
                 {p.bullets.map((b) => (

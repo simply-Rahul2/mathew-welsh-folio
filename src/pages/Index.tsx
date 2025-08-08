@@ -4,7 +4,7 @@ import Projects from "@/components/portfolio/Projects";
 import Timeline from "@/components/portfolio/Timeline";
 import Thesis from "@/components/portfolio/Thesis";
 import Contact from "@/components/portfolio/Contact";
-import ThemeToggle from "@/components/ThemeToggle";
+
 import { useEffect } from "react";
 
 const Index = () => {
@@ -19,7 +19,7 @@ const Index = () => {
       name: "Mathew John Welsh",
       jobTitle: "Full-Stack Developer",
       email: "mailto:Johnwelsh5158@gmail.com",
-      telephone: "+46793298629",
+      telephone: "+46 79-329 86 29",
       url: window.location.origin,
       sameAs: ["https://linkedin.com/in/mathew-welsh-2066131b3"],
       address: {
@@ -39,7 +39,7 @@ const Index = () => {
 
   return (
     <main>
-      <div className="fixed top-4 right-4 z-50"><ThemeToggle /></div>
+      
       <h1 className="sr-only">Mathew John Welsh — Full‑Stack Developer Portfolio</h1>
       <Hero />
       <Skills />
