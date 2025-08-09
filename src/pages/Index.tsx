@@ -4,6 +4,8 @@ import Projects from "@/components/portfolio/Projects";
 import Timeline from "@/components/portfolio/Timeline";
 import Thesis from "@/components/portfolio/Thesis";
 import Contact from "@/components/portfolio/Contact";
+import About from "@/components/portfolio/About";
+import Resume from "@/components/portfolio/Resume";
 
 import { useEffect } from "react";
 

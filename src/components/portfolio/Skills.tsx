@@ -1,4 +1,6 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { useState } from "react";
 
 const sections: { title: string; items: string[] }[] = [
   { title: "Languages", items: ["Python", "C", "Java (Basics)", "SQL", "JavaScript"] },
@@ -15,35 +17,47 @@ const sections: { title: string; items: string[] }[] = [
 ];
 
 const Skills = () => {
+  const [active, setActive] = useState(sections[0].title);
   return (
     <section id="skills" className="container py-16 md:py-24">
       <h2 className="font-display text-3xl md:text-4xl mb-8">Technical Skills</h2>
-      <div className="glass rounded-xl p-6">
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-1/3 md:w-1/4">Category</TableHead>
-                <TableHead>Skill</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {sections.map((s) => (
-                s.items.map((skill, idx) => (
-                  <TableRow key={`${s.title}-${skill}`}>
-                    {idx === 0 && (
-                      <TableCell rowSpan={s.items.length} className="align-top font-medium text-muted-foreground">
-                        {s.title}
-                      </TableCell>
-                    )}
-                    <TableCell>{skill}</TableCell>
-                  </TableRow>
-                ))
-              ))}
-            </TableBody>
-          </Table>
-        </div>
-      </div>
+      <Tabs value={active} onValueChange={setActive} className="w-full">
+        <TabsList className="flex flex-wrap gap-2 bg-transparent p-0 mb-4">
+          {sections.map((s) => (
+            <TabsTrigger key={s.title} value={s.title} className="capitalize">
+              {s.title}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        {sections.map((s) => (
+          <TabsContent key={s.title} value={s.title} className="mt-0">
+            <div className="glass rounded-xl p-6">
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-1/3 md:w-1/4">Category</TableHead>
+                      <TableHead>Skill</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {s.items.map((skill, idx) => (
+                      <TableRow key={`${s.title}-${skill}`}>
+                        {idx === 0 && (
+                          <TableCell rowSpan={s.items.length} className="align-top font-medium text-muted-foreground">
+                            {s.title}
+                          </TableCell>
+                        )}
+                        <TableCell>{skill}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            </div>
+          </TabsContent>
+        ))}
+      </Tabs>
     </section>
   );
 };
