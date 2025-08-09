@@ -38,16 +38,22 @@ const Index = () => {
   }, []);
 
   return (
-    <main>
-      
-      <h1 className="sr-only">Mathew John Welsh — Full‑Stack Developer Portfolio</h1>
-      <Hero />
-      <Skills />
-      <Projects />
-      <Timeline />
-      <Thesis />
-      <Contact />
-    </main>
+    <>
+      <aside className="fixed left-0 top-0 h-screen w-20 md:w-28 hidden sm:flex items-center justify-center z-40" aria-label="Left banner">
+        <div className="glass rounded-full px-5 py-2 -rotate-90 origin-center">
+          <span className="font-display tracking-widest uppercase">mathew-dev</span>
+        </div>
+      </aside>
+      <main className="pl-24 md:pl-32">
+        <h1 className="sr-only">Mathew John Welsh — Full‑Stack Developer Portfolio</h1>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Timeline />
+        <Thesis />
+        <Contact />
+      </main>
+    </>
   );
 };
 

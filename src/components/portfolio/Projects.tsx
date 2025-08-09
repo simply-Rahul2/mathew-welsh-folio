@@ -3,6 +3,20 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
+    id: "scalable-platform",
+    title: "Scalable Web Platform",
+    role: "Lead Developer",
+    meta: "Cloud Architecture • High Traffic",
+    features: [
+      "Real-time messaging system",
+      "Docker containerization",
+      "AWS EC2 deployment",
+      "Auto-scaling implementation",
+      "Load balancing for high traffic",
+    ],
+    techUsed: ["HTML", "CSS", "JavaScript", "Docker", "AWS EC2", "Load Balancing"],
+  },
+  {
     id: "grayscale",
     title: "Grayscale Image Processor",
     role: "Team Lead",
@@ -43,7 +57,16 @@ const Projects = () => {
       <h2 className="font-display text-3xl md:text-4xl mb-8">Project Portfolio</h2>
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
         {projects.map((p) => (
-          <Card key={p.id} className="overflow-hidden group hover-scale relative min-h-[260px] lg:min-h-[300px] transform transition-transform duration-300" onMouseMove={(e) => { const el = e.currentTarget as HTMLElement; const r = el.getBoundingClientRect(); const x = e.clientX - r.left; const y = e.clientY - r.top; el.style.setProperty('--x', `${x}px`); el.style.setProperty('--y', `${y}px`); }}>
+          <Card
+            key={p.id}
+            className="overflow-hidden group hover-scale relative min-h-[340px] lg:min-h-[420px] transform transition-transform duration-300"
+            onMouseMove={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              const r = el.getBoundingClientRect();
+              const x = e.clientX - r.left; const y = e.clientY - r.top;
+              el.style.setProperty('--x', `${x}px`); el.style.setProperty('--y', `${y}px`);
+            }}
+          >
             <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden>
               <div className="absolute inset-0" style={{
                 background: 'radial-gradient(600px 300px at var(--x, 50%) var(--y, 50%), hsl(var(--ring)/0.28), transparent 60%)'
@@ -57,16 +80,39 @@ const Projects = () => {
             </CardHeader>
             <CardContent className="p-8 pt-0">
               <p className="text-sm text-muted-foreground mb-3">{p.role}</p>
-              <ul className="list-disc list-inside space-y-1 text-sm mb-4">
-                {p.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-2">
-                {p.tech.map((t) => (
-                  <Badge key={t} variant="secondary">{t}</Badge>
-                ))}
-              </div>
+              {"features" in p ? (
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="text-sm font-semibold mb-2">Key Features</h3>
+                    <ul className="list-disc list-inside space-y-1 text-sm">
+                      {p.features!.map((f: string) => (
+                        <li key={f}>{f}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {p.techUsed!.map((t: string) => (
+                        <Badge key={t} variant="secondary">{t}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <ul className="list-disc list-inside space-y-1 text-sm mb-4">
+                    {p.bullets?.map((b: string) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    {p.tech?.map((t: string) => (
+                      <Badge key={t} variant="secondary">{t}</Badge>
+                    ))}
+                  </div>
+                </>
+              )}
             </CardContent>
           </Card>
         ))}
